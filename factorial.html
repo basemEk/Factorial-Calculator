@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <title>BASSEM'S EXERCISE</title>
+    <meta lang="en-us">
+    <meta charset="utf-8">
+    <style>
+        #container {
+            background-color: lightblue;
+            margin: 20%;
+            margin-top: 5%;
+            padding: 4%;
+            border-radius: 20px;
+        }
+
+        h3 {
+            margin-top: 10%;
+            margin: 100 auto;
+            text-align: center;
+            font-family: sans-serif;
+            font: size 30px;
+            text-transform: uppercase
+        }
+
+        #factorialTxtId {
+            padding: 12px;
+        }
+
+        #factorialButtonId {
+            padding: 7px;
+            border-radius: 5px;
+            background-color: rgb(209, 193, 119);
+            color: brown;
+
+        }
+
+        #checkValue {
+            font-size: 22px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: red;
+            text-align: center;
+        }
+
+        body {
+            text-align: center;
+        }
+
+        form {
+            margin-top: 2%;
+            padding-top: 1%;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <h3>Enter a Number and get it's Factorial</h3>
+        <form>
+
+            <input type="number" class="text_input" id="factorialTxtId" /><br><br>
+            <input type="button" value="Calculate" id="factorialButtonId" onclick="calculate()" /><br><br>
+            <div>
+                Factorial of <span id="inputValueID"></span> is: <div id="checkValue"></div>
+            </div>
+
+        </form>
+    </div>
+
+
+    <script>
+        function calculate() {
+            var inputValue = document.getElementById('factorialTxtId').value;
+            var checkValue = isNaN(inputValue);
+
+            if (!checkValue) {
+                document.getElementById('inputValueID').innerHTML = inputValue;
+                var final = 1;
+
+                while (inputValue >= 1) {
+                    final = final * inputValue;
+                    inputValue--;
+                }
+
+                document.getElementById('checkValue').innerHTML = final;
+            }
+        }  
+    </script>
+
+</body>
+
+
+    </html>
+
